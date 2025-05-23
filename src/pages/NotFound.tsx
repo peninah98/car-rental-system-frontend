@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Example() {
+export default function NotFound() {
     return (
       <>
         

@@ -1,4 +1,3 @@
-// src/components/HeroSection.tsx
 export default function HeroSection() {
   return (
     <div className="relative isolate overflow-hidden bg-gray-900 pt-14">

@@ -5,8 +5,7 @@ const Home = () => {
     return (
         <div>
             <HeroSection />
-            <HouseList />
-        </div>
+            <HouseList />        </div>
     )
 }
 

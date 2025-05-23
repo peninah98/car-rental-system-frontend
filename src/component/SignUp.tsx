@@ -10,8 +10,6 @@ interface FormData {
   phone: string;
   password: string;
   confirmPassword: string;
-  drivingLicense: string;
-  agreeTerms: boolean;
 }
 
 interface FormErrors {
@@ -21,8 +19,6 @@ interface FormErrors {
   phone?: string;
   password?: string;
   confirmPassword?: string;
-  drivingLicense?: string;
-  agreeTerms?: string;
 }
 
 const SignUp= () => {
@@ -35,8 +31,6 @@ const SignUp= () => {
     phone: '',
     password: '',
     confirmPassword: '',
-    drivingLicense: '',
-    agreeTerms: false
   });
   
   const [errors, setErrors] = useState<FormErrors>({});
@@ -93,46 +87,27 @@ const SignUp= () => {
     } else if (formData.password !== formData.confirmPassword) {
       newErrors.confirmPassword = 'Passwords do not match';
     }
-    
-
-    if (!formData.drivingLicense.trim()) {
-      newErrors.drivingLicense = 'Driving license number is required';
-    }
-    
-    if (!formData.agreeTerms) {
-      newErrors.agreeTerms = 'You must agree to the terms and conditions';
-    }
-    
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!validateForm()) {
       return;
     }
-    
+    setErrors({});
     setIsLoading(true);
-    
     try {
-      // Save user to localStorage
       const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
       existingUsers.push(formData);
       localStorage.setItem('users', JSON.stringify(existingUsers));
-
-      // Show success toast
       toast.success('Account has been successfully created');
-
-      // Simulate API call with timeout
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Redirect to login page on success
-      navigate('/login');
+      navigate('/dashboard');
     } catch (error) {
       console.error('Registration failed:', error);
-      // Handle registration error
+      toast.error('Registration failed. Please try again.');
     } finally {
       setIsLoading(false);
     }

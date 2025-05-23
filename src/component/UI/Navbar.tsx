@@ -33,7 +33,7 @@ export default function Navbar() {
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <h1 className="text-3xl font-bold">
-              <span className="text-gray-900 bg-orange-500 px-2 py-1 rounded">K</span>
+              <span className="text-gray-700 bg-orange-500 px-2 py-1 rounded">K</span>
               <span className={`${isScrolled ? 'text-gray-600' : 'text-white'}`}>Housing</span>
             </h1>
           </a>

@@ -1,104 +1,172 @@
-import { motion } from "framer-motion"
-import { Building2, Users, Handshake, Globe2 } from "lucide-react"
-
-const services = [
+const stats = [
+  { label: 'Clients', value: '709' },
+  { label: 'Houses', value: '1,100' },
+  { label: 'Houses rented', value: '1,000' },
+  { label: 'Customers feedbacks', value: '470' },
+]
+const values = [
   {
-    title: "Property Listings",
-    description: "We offer a wide selection of affordable, premium, and luxury homes in Kigali and beyond.",
-    icon: <Building2 className="w-8 h-8 text-blue-600" />,
+    name: 'Be world-class',
+    description:
+      'Aut illo quae. Ut et harum ea animi natus. Culpa maiores et sed sint et magnam exercitationem quia. Ullam voluptas nihil vitae dicta molestiae et. Aliquid velit porro vero.',
   },
   {
-    title: "Customer Support",
-    description: "Our team is available to guide and support you throughout your property journey.",
-    icon: <Users className="w-8 h-8 text-green-600" />,
+    name: 'Share everything you know',
+    description:
+      'Mollitia delectus a omnis. Quae velit aliquid. Qui nulla maxime adipisci illo id molestiae. Cumque cum ut minus rerum architecto magnam consequatur. Quia quaerat minima.',
   },
   {
-    title: "Trusted Agents",
-    description: "Work with verified and experienced agents who understand your needs.",
-    icon: <Handshake className="w-8 h-8 text-purple-600" />,
+    name: 'Always learning',
+    description:
+      'Aut repellendus et officiis dolor possimus. Deserunt velit quasi sunt fuga error labore quia ipsum. Commodi autem voluptatem nam. Quos voluptatem totam.',
   },
   {
-    title: "Global Reach",
-    description: "Helping Rwandans abroad invest confidently in real estate back home.",
-    icon: <Globe2 className="w-8 h-8 text-yellow-600" />,
+    name: 'Be supportive',
+    description:
+      'Magnam provident veritatis odit. Vitae eligendi repellat non. Eum fugit impedit veritatis ducimus. Non qui aspernatur laudantium modi. Praesentium rerum error deserunt harum.',
+  },
+  {
+    name: 'Take responsibility',
+    description:
+      'Sit minus expedita quam in ullam molestiae dignissimos in harum. Tenetur dolorem iure. Non nesciunt dolorem veniam necessitatibus laboriosam voluptas perspiciatis error.',
+  },
+  {
+    name: 'Enjoy downtime',
+    description:
+      'Ipsa in earum deserunt aut. Quos minus aut animi et soluta. Ipsum dicta ut quia eius. Possimus reprehenderit iste aspernatur ut est velit consequatur distinctio.',
   },
 ]
 
-export default function About() {
+
+export default function AboutPage() {
+
   return (
-    <main className="min-h-screen bg-white">
-      <section className="relative bg-cover bg-center h-[60vh] flex items-center justify-center text-white bg-[url('/house1.png')]">
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-10 text-center max-w-2xl px-4"
-        >
-          <h1 className="text-4xl font-bold sm:text-5xl">About Us</h1>
-          <p className="mt-4 text-lg text-white/80">
-            Your trusted partner in finding the perfect home.
-          </p>
-        </motion.div>
-      </section>
-
-      <section className="px-6 py-16 max-w-6xl mx-auto">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl font-bold text-gray-900">What We Offer</h2>
-          <p className="mt-4 text-gray-600 text-lg max-w-xl mx-auto">
-            We simplify real estate for everyone—from first-time renters to experienced investors.
-          </p>
+    <div className="bg-white">
+          <main className="isolate">
+        <div className="relative isolate -z-10">
+          <div
+            aria-hidden="true"
+            className="absolute top-0 right-0 left-1/2 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
+          >
+            <div
+              style={{
+                clipPath:
+                  'polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)',
+              }}
+              className="aspect-801/1036 w-200.25 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+            />
+          </div>
+          <div className="overflow-hidden">
+            <div className="mx-auto max-w-7xl px-6 pt-36 pb-32 sm:pt-60 lg:px-8 lg:pt-32">
+              <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+                <div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
+                  <h1 className="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl">
+                     We are helping people to get houses easily                  
+                   </h1>
+                  <p className="mt-8 text-lg text-pretty  sm:max-w-md sm:text-xl/8 lg:max-w-none">
+                  We are dedicated to transforming the real estate experience in Rwanda by offering reliable services, expert guidance, and personalized support. Our team ensures that every client finds a home or investment that fits their dreams, lifestyle, and long-term goals.                  </p>
+                </div>
+                <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
+                  <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
+                    <div className="relative">
+                      <img
+                        alt=""
+                        src="../public/house1.png"
+                        className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                      />
+                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset" />
+                    </div>
+                  </div>
+                  <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
+                    <div className="relative">
+                      <img
+                        alt=""
+                        src="../public/house1.png"
+                        className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                      />
+                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset" />
+                    </div>
+                    <div className="relative">
+                      <img
+                        alt=""
+                        src="../public/house1.png"
+                        className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                      />
+                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset" />
+                    </div>
+                  </div>
+                  <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
+                    <div className="relative">
+                      <img
+                        alt=""
+                        src="../public/house1.png"
+                        className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                      />
+                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset" />
+                    </div>
+                    <div className="relative">
+                      <img
+                        alt=""
+                        src="../public/house1.png"
+                        className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                      />
+                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              className="p-6 rounded-xl bg-white shadow-md hover:shadow-xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-            >
-              <div className="mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">{service.title}</h3>
-              <p className="text-gray-600 text-sm">{service.description}</p>
-            </motion.div>
-          ))}
+        <div className="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
+          <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
+            <div className="mt-6 flex flex-col justify-center items-center gap-x-8 gap-y-20 lg:flex-row">
+              <div className="lg:w-full lg:max-w-2xl lg:flex-auto space-y-4">
+            <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Our mission</h2>
+                <p className="text-gray-600">
+                  Our mission is to make real estate accessible, transparent, and stress-free for every Rwandan—whether living
+                  locally or abroad. We empower clients with knowledge, expert guidance, and trusted partnerships to help them
+                  confidently secure their dream homes or investments.
+                </p>
+                <p className="mt-10 max-w-xl text-gray-700">
+                  From modern apartments to countryside villas, we’re committed to matching you with the perfect space.
+                  Our team stands by your side at every step, ensuring your experience is smooth, secure, and rewarding.
+                </p>
+              </div>
+              <div className="lg:flex lg:flex-auto lg:justify-center">
+                <dl className="w-64 space-y-8 xl:w-80">
+                  {stats.map((stat) => (
+                    <div key={stat.label} className="flex flex-col-reverse gap-y-4">
+                      <dt className="text-base/7 text-gray-600">{stat.label}</dt>
+                      <dd className="text-2xl font-semibold tracking-tight text-gray-900">{stat.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
 
-      <section className="bg-gray-100 py-20 px-6">
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.6 }}
-    className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
-  >
-    <div className="relative">
-      <div className="absolute -top-4 -left-4 w-16 h-16 rounded-full bg-indigo-100" />
-      <div className="relative z-10">
-        <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
-        <p className="text-lg text-gray-700 leading-relaxed">
-          To redefine the real estate experience in Rwanda by offering reliable, transparent, and innovative services.
-          We empower individuals and families—locally and abroad—to confidently find their dream home or secure a
-          meaningful investment property.
-        </p>
-      </div>
+        <div className="mx-auto mt-32 max-w-7xl px-6 py-8 sm:mt-40 lg:px-8 lg:py-16">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Our values</h2>
+            <p className="mt-6 text-lg/8 text-gray-600">
+              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
+              accusamus quisquam.
+            </p>
+          </div>
+          <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            {values.map((value) => (
+              <div key={value.name}>
+                <dt className="font-semibold text-gray-900">{value.name}</dt>
+                <dd className="mt-1 text-gray-600">{value.description}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+      </main>
     </div>
-
-    <div className="relative w-full h-[320px]">
-      <div className="absolute inset-0 rounded-xl bg-indigo-600 opacity-10" />
-      <img
-        src="../public/house1.png"
-        alt="Mission"
-        className="w-full h-full object-cover rounded-xl shadow-lg object-center"
-      />
-    </div>
-  </motion.div>
-</section>
-
-    </main>
   )
 }

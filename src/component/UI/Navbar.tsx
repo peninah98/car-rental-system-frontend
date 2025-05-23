@@ -3,12 +3,11 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Home', href: '#' },
-  { name: 'Houses', href: '#' },
-  { name: 'About', href: '/contact' },
-  { name: 'Contact', href: '#' },
-  { name: 'Login', href: '#' },
-  { name: 'Register', href: '#' },
+  { name: 'Home', href: '/' },
+  { name: 'Houses', href: '/houses' },
+  { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' },
+
 ]
 
 export default function Navbar() {
@@ -58,12 +57,19 @@ export default function Navbar() {
             </a>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4">
           <a 
             href="#" 
-            className={`${isScrolled ? 'text-gray-900' : 'text-white'}`}
+            className={`${isScrolled ? 'text-white bg-orange-500 px-4 py-2 rounded items-center' : 'text-white bg-orange-500 px-4 py-2 rounded items-center'}`}
           >
-            Log in <span aria-hidden="true">&rarr;</span>
+
+            Register <span aria-hidden="true"></span>
+          </a>
+          <a 
+            href="#" 
+            className={`${isScrolled ? 'text-orange-500 bg-white border border-orange-500 px-4 py-2 rounded items-center ' : 'text-orange-500 bg-white items-center px-4 py-2 rounded items-center'}`}
+          >
+            Log in <span aria-hidden="true"></span>
           </a>
         </div>
       </nav>

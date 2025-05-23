@@ -1,12 +1,8 @@
-import Layout from "./app/layout";
-import Home from "./app/Home";
+import { RouterProvider } from "react-router-dom";
+import { routes } from "./routes/routes";
 
-function App() {
-  return (
-    <Layout>
-      <Home />
-    </Layout>
-  );
+export default function App() {
+    return (
+        <RouterProvider router={routes} />
+    );
 }
-
-export default App;

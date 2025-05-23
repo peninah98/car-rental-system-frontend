@@ -1,5 +1,7 @@
 import { useState, type ChangeEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface FormData {
   firstName: string;
@@ -115,9 +117,14 @@ const SignUp= () => {
     setIsLoading(true);
     
     try {
-      // Here you would make an API call to register the user
-      // const response = await api.register(formData);
-      
+      // Save user to localStorage
+      const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
+      existingUsers.push(formData);
+      localStorage.setItem('users', JSON.stringify(existingUsers));
+
+      // Show success toast
+      toast.success('Account has been successfully created');
+
       // Simulate API call with timeout
       await new Promise(resolve => setTimeout(resolve, 1000));
       
@@ -234,6 +241,7 @@ const SignUp= () => {
           Already have an account? <Link to="/login" className="text-orange-500 font-medium hover:underline">Login here</Link>
         </div>
       </div>
+      <ToastContainer position="top-center" autoClose={2000} hideProgressBar={false} closeOnClick pauseOnFocusLoss draggable pauseOnHover />
     </div>
   );
 };

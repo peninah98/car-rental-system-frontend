@@ -24,12 +24,12 @@ export const routes = createBrowserRouter([
                 element: <About />
             },
             {
-                path: "houses",
-                element: <SignUp />
-            },
-            {
                 path: "*", 
                 element: <NotFound />,
+            },
+            {
+                path: "register",
+                element: <SignUp />
             },
         ]
     }

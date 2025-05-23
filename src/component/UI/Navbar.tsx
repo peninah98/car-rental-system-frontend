@@ -61,7 +61,7 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4">
         <button 
-  onClick={() => navigate('/signup')}
+  onClick={() => navigate('/register')}
   className={`${isScrolled ? 'text-white bg-orange-500 px-4 py-2 rounded items-center' : 'text-white bg-orange-500 px-4 py-2 rounded items-center'}`}
 >
   Register <span aria-hidden="true"></span>
@@ -103,14 +103,22 @@ export default function Navbar() {
                   </a>
                 ))}
               </div>
-              <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-800"
-                >
-                  Log in
-                </a>
-              </div>
+              <div className="py-6 flex gap-4 flex-col">
+        <button 
+  onClick={() => {
+    console.log("Register clicked")
+    navigate('/register')}}
+  className={`${isScrolled ? 'text-white bg-orange-500 px-4 py-2 rounded items-center' : 'text-white bg-orange-500 px-4 py-2 rounded items-center'} cursor-pointer`}
+>
+  Register <span aria-hidden="true"></span>
+</button>
+          <button 
+            onClick={() => navigate('/login')}
+            className={`${isScrolled ? 'text-orange-500 bg-white border border-orange-500 px-4 py-2 rounded items-center ' : 'text-orange-500 bg-white items-center px-4 py-2 rounded items-center'} cursor-pointer`}
+          >
+            Log in <span aria-hidden="true"></span>
+          </button>
+        </div>
             </div>
           </div>
         </DialogPanel>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useNavigate } from 'react-router-dom'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -13,6 +14,7 @@ const navigation = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,19 +60,18 @@ export default function Navbar() {
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4">
-          <a 
-            href="#" 
-            className={`${isScrolled ? 'text-white bg-orange-500 px-4 py-2 rounded items-center' : 'text-white bg-orange-500 px-4 py-2 rounded items-center'}`}
-          >
-
-            Register <span aria-hidden="true"></span>
-          </a>
-          <a 
-            href="#" 
+        <button 
+  onClick={() => navigate('/signup')}
+  className={`${isScrolled ? 'text-white bg-orange-500 px-4 py-2 rounded items-center' : 'text-white bg-orange-500 px-4 py-2 rounded items-center'}`}
+>
+  Register <span aria-hidden="true"></span>
+</button>
+          <button 
+            onClick={() => navigate('/login')}
             className={`${isScrolled ? 'text-orange-500 bg-white border border-orange-500 px-4 py-2 rounded items-center ' : 'text-orange-500 bg-white items-center px-4 py-2 rounded items-center'}`}
           >
             Log in <span aria-hidden="true"></span>
-          </a>
+          </button>
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">

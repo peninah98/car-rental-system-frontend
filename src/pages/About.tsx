@@ -150,10 +150,9 @@ export default function AboutPage() {
 
         <div className="mx-auto mt-32 max-w-7xl px-6 py-8 sm:mt-40 lg:px-8 lg:py-16">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Our values</h2>
-            <p className="mt-6 text-lg/8 text-gray-600">
-              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-              accusamus quisquam.
+            <h2 className="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">Our values</h2>
+            <p className="mt-6 text-gray-600">
+            We are committed to delivering exceptional service to every client, ensuring their satisfaction and trust.
             </p>
           </div>
           <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">

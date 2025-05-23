@@ -1,9 +1,12 @@
-import HeroSections from "./component/HeroSections"
+import Layout from "./app/layout";
+import Home from "./app/Home";
 
-const App = () => {
-    return (
-        <HeroSections />
-    )
+function App() {
+  return (
+    <Layout>
+      <Home />
+    </Layout>
+  );
 }
 
-export default App
+export default App;

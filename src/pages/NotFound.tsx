@@ -5,13 +5,16 @@ export default function NotFound() {
       <>
         
         <main className="relative isolate min-h-full w-full h-screen overflow-hidden flex items-center justify-center">          
-          <img
-            alt="house"
-            src="../public/house3.png"
-            className="absolute inset-0 -z-10 w-full h-full object-cover object-center blur-sm brightness-75"
-            />
+        <div className="absolute inset-0 -z-10">
+  <img
+    src="../public/house1.png"
+    alt="house"
+    className="w-full h-full object-cover object-center"
+  />
+  <div className="absolute inset-0 bg-black/70" />
+</div>
           <div className="mx-auto max-w-7xl px-6 py-32 text-center sm:py-40 lg:px-8">
-            <p className="text-base/8 font-semibold text-white">404</p>
+            <p className="text-md font-semibold text-white">404</p>
             <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
               Page not found
             </h1>

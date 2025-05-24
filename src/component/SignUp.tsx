@@ -10,6 +10,7 @@ interface FormData {
   phone: string;
   password: string;
   confirmPassword: string;
+  role: string;
 }
 
 interface FormErrors {
@@ -19,6 +20,7 @@ interface FormErrors {
   phone?: string;
   password?: string;
   confirmPassword?: string;
+  role?: string;
 }
 
 const SignUp= () => {
@@ -31,25 +33,34 @@ const SignUp= () => {
     phone: '',
     password: '',
     confirmPassword: '',
+    role: '',
   });
   
   const [errors, setErrors] = useState<FormErrors>({});
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : value
+  const handleChange = (
+  e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+) => {
+  const { name, value, type } = e.target;
+  let fieldValue: string | boolean = value;
+
+  if (type === 'checkbox' && e.target instanceof HTMLInputElement) {
+    fieldValue = e.target.checked;
+  }
+
+  setFormData({
+    ...formData,
+    [name]: fieldValue
+  });
+
+  if (errors[name as keyof FormErrors]) {
+    setErrors({
+      ...errors,
+      [name]: undefined
     });
-    
-    if (errors[name as keyof FormErrors]) {
-      setErrors({
-        ...errors,
-        [name]: undefined
-      });
-    }
-  };
+  }
+};
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -86,6 +97,9 @@ const SignUp= () => {
       newErrors.confirmPassword = 'Please confirm your password';
     } else if (formData.password !== formData.confirmPassword) {
       newErrors.confirmPassword = 'Passwords do not match';
+    }
+    if (!formData.role) {
+      newErrors.role = 'Please select a role';
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -173,6 +187,23 @@ const SignUp= () => {
               className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
             />
             {errors.phone && <span className="text-red-500 text-xs">{errors.phone}</span>}
+          </div>
+
+          <div className="space-y-2">
+            <label htmlFor="role" className="block text-sm font-medium text-gray-700">Role</label>
+            <select
+              id="role"
+              name="role"
+              value={formData.role}
+              onChange={handleChange}
+              className={`w-full px-4 py-2 border rounded-md focus:ring-1 focus:ring-orange-500 focus:border-orange-500 outline-none transition ${errors.role ? 'border-red-500' : 'border-gray-300'}`}
+            >
+              <option value="">Select role</option>
+              <option value="admin">Admin</option>
+              <option value="tenant">Tenant</option>
+              <option value="landlord">Landlord</option>
+            </select>
+            {errors.role && <span className="text-red-500 text-xs">{errors.role}</span>}
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

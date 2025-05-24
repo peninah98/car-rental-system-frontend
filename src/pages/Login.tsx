@@ -3,12 +3,10 @@ import { useNavigate, Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// Animation keyframes for fade/slide
 const fadeIn = {
   animation: 'fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1) both',
 };
 
-// Add keyframes globally (for demo, in production use a CSS file)
 if (typeof document !== 'undefined' && !document.getElementById('login-fadein-keyframes')) {
   const style = document.createElement('style');
   style.id = 'login-fadein-keyframes';
@@ -73,9 +71,8 @@ const Login = () => {
         className="w-full max-w-md bg-white/90 rounded-2xl shadow-2xl p-8 md:p-12 relative overflow-hidden"
         style={fadeIn}
       >
-        {/* Animated orange accent */}
-        <div className="absolute -top-10 -left-10 w-32 h-32 bg-orange-500 opacity-10 rounded-full blur-2xl animate-pulse" />
-        <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-orange-500 opacity-10 rounded-full blur-2xl animate-pulse" />
+        <div className="absolute -top-10 -left-10 w-32 h-32 bg-orange-200 opacity-10 rounded-full blur-2xl animate-pulse" />
+        <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-orange-200 opacity-10 rounded-full blur-2xl animate-pulse" />
         <h1 className="text-3xl font-extrabold text-center text-gray-800 tracking-tight mb-2 animate-fadein">Welcome Back!</h1>
         <p className="text-center text-gray-500 mb-8 animate-fadein delay-100">Login to your account to continue</p>
         <form className="space-y-7" onSubmit={handleSubmit}>

@@ -84,7 +84,7 @@ const Login = () => {
               name="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all duration-300 bg-gray-50 shadow-sm hover:shadow-md ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+              className={`w-full px-4 py-2 border rounded-lg focus:ring-1 focus:ring-orange-200 focus:border-orange-200 outline-none transition-all duration-300 bg-gray-50 shadow-sm hover:shadow-md ${errors.email ? 'border-red-500' : 'border-gray-200 border'}`}
               autoComplete="username"
               style={{ transition: 'box-shadow 0.3s, border 0.3s' }}
             />
@@ -98,7 +98,7 @@ const Login = () => {
               name="password"
               value={password}
               onChange={e => setPassword(e.target.value)}
-              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all duration-300 bg-gray-50 shadow-sm hover:shadow-md ${errors.password ? 'border-red-500' : 'border-gray-300'}`}
+              className={`w-full px-4 py-2 border rounded-lg focus:ring-1 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all duration-300 bg-gray-50 shadow-sm hover:shadow-md ${errors.password ? 'border-red-500' : 'border-gray-300'}`}
               autoComplete="current-password"
               style={{ transition: 'box-shadow 0.3s, border 0.3s' }}
             />

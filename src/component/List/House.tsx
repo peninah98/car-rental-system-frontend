@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Bed, Bath, Ruler } from 'lucide-react'
 import HouseCard from '../UI/cards/House'
+import { useNavigate } from 'react-router-dom'
 
 const houses = Array.from({ length: 40 }).map((_, i) => ({
   id: i + 1,
@@ -17,6 +18,8 @@ const houses = Array.from({ length: 40 }).map((_, i) => ({
 export default function HouseList() {
   const [visibleCount, setVisibleCount] = useState(12)
   const [isMobile, setIsMobile] = useState(false)
+  const navigate = useNavigate()
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,8 +50,8 @@ export default function HouseList() {
             location={house.location}
             price={house.price}
             icons={house.icons}
-            onViewMore={() => alert(`View more about ${house.location}`)}
-          />
+            onViewMore={() => navigate(`/houses/${house.id}`)}
+            />
         ))}
       </div>
 

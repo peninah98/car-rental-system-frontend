@@ -1,8 +1,8 @@
-import React from 'react';
+import type { ReactNode } from 'react';
 import { useRole } from '../context/RoleContext';
 import DashboardNav from './DashboardNav';
 
-const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
+const DashboardLayout = ({ children }: { children:ReactNode }) => {
   const { role, setRole } = useRole();
 
   return (

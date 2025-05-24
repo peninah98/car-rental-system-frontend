@@ -104,7 +104,7 @@ const SignUp= () => {
       localStorage.setItem('users', JSON.stringify(existingUsers));
       toast.success('Account has been successfully created');
       await new Promise(resolve => setTimeout(resolve, 1000));
-      navigate('/dashboard');
+      navigate('/login');
     } catch (error) {
       console.error('Registration failed:', error);
       toast.error('Registration failed. Please try again.');
